@@ -4,7 +4,7 @@
 
 例子：[Leetcode.977](https://leetcode-cn.com/problems/squares-of-a-sorted-array/)
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220409162903415.png" alt="image-20220409162903415" style="zoom: 50%;" />
+<img src="https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042136783.png" style="zoom: 67%;" />
 
 ```java
 public class Integer_array {
@@ -49,7 +49,7 @@ public class Integer_array {
 
 [Leetcode.14](https://leetcode-cn.com/problems/longest-common-prefix/)
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220409182411712.png" alt="image-20220409182411712" style="zoom:50%;" />
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042215838.png)
 
 ```java
 public class String_array {
@@ -89,7 +89,7 @@ public class String_array {
 
 例子：[Leetcode704](https://leetcode-cn.com/problems/binary-search/)
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220409173044103.png" alt="image-20220409173044103" style="zoom:50%;" />
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042223686.png)
 
 ```java
 public class Multiple {
@@ -133,25 +133,25 @@ public class Multiple {
 
 例题：[Leetcode.349](https://leetcode-cn.com/problems/intersection-of-two-arrays/)
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220409182109647.png" alt="image-20220409182109647" style="zoom:50%;" />
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042225402.png)
 
 ```java
 public class Multiple2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (true) {
-            String[] split = sc.next().toString().split(",");
             String[] split1 = sc.next().toString().split(",");
-            int[] nums = new int[split.length];
+            String[] split2 = sc.next().toString().split(",");
             int[] nums1 = new int[split1.length];
-            for (int i = 0; i < nums.length; i++) {
-                nums[i] = parseInt(split[i]);
-            }
+            int[] nums2 = new int[split2.length];
             for (int i = 0; i < nums1.length; i++) {
                 nums1[i] = parseInt(split1[i]);
             }
+            for (int i = 0; i < nums2.length; i++) {
+                nums2[i] = parseInt(split2[i]);
+            }
             //------------------------------------------------
-            int[] intersection = intersection(nums, nums1);
+            int[] intersection = intersection(nums1, nums2);
             for (int i : intersection) {
                 System.out.print(i + " ");
             }
@@ -159,28 +159,21 @@ public class Multiple2 {
     }
 
     public static int[] intersection(int[] nums1, int[] nums2) {
-        if (nums1 == null || nums1.length == 0 || nums2 == null || nums2.length == 0) {
-            return new int[0];
-        }
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> resSet = new HashSet<>();
-        //遍历数组1
-        for (int i : nums1) {
+
+        // 遍历数组1
+        for (int i : nums1){
             set1.add(i);
         }
-        //遍历数组2的过程中判断哈希表中是否存在该元素
-        for (int i : nums2) {
-            if (set1.contains(i)) {
+        // 遍历数组2的过程判断哈希表中是否存在该元素
+        for (int i : nums2){
+            if (set1.contains(i)){
                 resSet.add(i);
             }
         }
-        int[] resArr = new int[resSet.size()];
-        int index = 0;
-        //将结果几何转为数组
-        for (int i : resSet) {
-            resArr[index++] = i;
-        }
-        return resArr;
+        // 将结果 集合转为 数组
+        return resSet.stream().mapToInt(x -> x).toArray();
     }
 
 }
@@ -192,7 +185,7 @@ public class Multiple2 {
 
 [Leetcode.206](https://leetcode-cn.com/problems/reverse-linked-list/)
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220409185459823.png" alt="image-20220409185459823" style="zoom:67%;" />
+<img src="https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042248561.png" style="zoom:67%;" />
 
 ```java
 public class LinkList1 {
@@ -247,7 +240,7 @@ public class LinkList1 {
 
 [Leetcode.102](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220409203512859.png" alt="image-20220409203512859" style="zoom:67%;" />
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042251484.png)
 
 ```java
 public class Tree {
@@ -292,6 +285,7 @@ public class Tree {
             return null;
         }
         if (arr[i - 1] == null) return null;
+        
         TreeNode root = new TreeNode(arr[i - 1]); // 根节点
         root.left = createBT(arr, 2 * i); // 递归建立左孩子结点
         root.right = createBT(arr, 2 * i + 1); // 递归建立右孩子结点
@@ -335,7 +329,7 @@ https://ac.nowcoder.com/acm/contest/5657#question
 
 ### A+B（1）
 
-![image-20220412131110763](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412131110763.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042139751.png)
 
 ```java
 import java.util.Scanner;
@@ -353,20 +347,21 @@ public class Main{
 
 ### A+B（2）
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412123448823.png" alt="image-20220412123448823" style="zoom:67%;" />
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042143653.png)
 
 ```java
 import java.util.*;
 
 public class Main{
+    
     public static void main(String[] args){
+        
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
-        while (t > 0){
+        while (t-- > 0){
             int a = sc.nextInt();
             int b = sc.nextInt();
             System.out.println(a + b);
-            t--;
         }
     }
 }
@@ -374,19 +369,24 @@ public class Main{
 
 ### A+B（3）
 
-![image-20220412124314915](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412124314915.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042148347.png)
 
 ```java
 import java.util.*;
 
 public class Main{
+    
     public static void main(String[] args){
+        
         Scanner sc = new Scanner(System.in);
+        
         while (sc.hasNext()){
             int a = sc.nextInt();
             int b = sc.nextInt();
+            
             if (a == 0 && b == 0) break;
-            System.out.println( a + b);
+            
+            System.out.println(a + b);
         }
     }
 }
@@ -396,23 +396,26 @@ public class Main{
 
 ### A+B（4）
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412125317446.png" alt="image-20220412125317446" style="zoom:67%;" />
+<img src="https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042149839.png" style="zoom:67%;" />
 
 ```java
 import java.util.*;
 
 public class Main{
+    
     public static void main(String[] args){
+        
         Scanner sc = new Scanner(System.in);
         
         while (sc.hasNext()){
             int n = sc.nextInt();
+            
             int sum = 0;
             if (n == 0) break;
-            while (n > 0){
+            
+            while (n-- > 0){
                 int a = sc.nextInt();
                 sum += a;
-                n--;
             }
             System.out.println(sum);
         }
@@ -422,25 +425,26 @@ public class Main{
 
 ### A+B（5）
 
-![image-20220412130013081](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412130013081.png)
+<img src="https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042153720.png" style="zoom:67%;" />
 
 ```java
 import java.util.*;
 
 public class Main{
+    
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
-        while (t > 0){
+        
+        while (t-- > 0){
             int n = sc.nextInt();
             int sum = 0;
-            while (n > 0){
+            
+            while (n-- > 0){
                 int a = sc.nextInt();
                 sum += a;
-                n--;
             }
             System.out.println(sum);
-            t--;
         }
     }
 }
@@ -448,22 +452,25 @@ public class Main{
 
 ### A+B（6）
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412131045977.png" alt="image-20220412131045977" style="zoom:67%;" />
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042156607.png)
 
 ```java
 import java.util.*;
 
 public class Main{
+    
     public static void main(String[] args){
+        
         Scanner sc = new Scanner(System.in);
         
         while (sc.hasNext()){
             int n = sc.nextInt();
+            
             int sum = 0;
-            while (n > 0){
+            
+            while (n-- > 0){
                 int a = sc.nextInt();
                 sum += a;
-                n--;
             }
             System.out.println(sum);
         }
@@ -475,14 +482,16 @@ public class Main{
 
 ### A+B（7）***
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412130901830.png" alt="image-20220412130901830" style="zoom:67%;" />
+<img src="https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042158279.png" style="zoom:67%;" />
 
 ```java
 import java.util.*;
 
 public class Main{
+    
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
+        
         while (sc.hasNext()){
             String[] s = sc.nextLine().split(" ");
             int sum = 0;
@@ -497,19 +506,21 @@ public class Main{
 
 ### 字符串排序（1）
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412132531822.png" alt="image-20220412132531822" style="zoom:67%;" />
+<img src="https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042201489.png" style="zoom:67%;" />
 
 ```java
 import java.util.*;
 
 public class Main{
+    
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         sc.nextLine();
+        
         String[] s = sc.nextLine().split(" ");
         Arrays.sort(s);
-        for (int i = 0;i < s.length;i++){
-            System.out.print(s[i] + " ");
+        for (String str : s){
+            System.out.print(str + " ");
         }
     }
 }
@@ -517,7 +528,7 @@ public class Main{
 
 ### 字符串排序（2）
 
-![image-20220412132843674](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412132843674.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042204366.png)
 
 ```java
 import java.util.*;
@@ -528,8 +539,8 @@ public class Main{
         while (sc.hasNext()){
             String[] s = sc.nextLine().split(" ");
             Arrays.sort(s);
-            for (int i = 0;i < s.length;i++){
-                System.out.print(s[i] + " ");
+            for (String str : s){
+                System.out.print(str + " ");
             }
             System.out.println();
         }
@@ -539,7 +550,7 @@ public class Main{
 
 ### 字符串排序（3）
 
-![image-20220412133213314](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412133213314.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042205206.png)
 
 ```java
 import java.util.*;
@@ -565,7 +576,7 @@ public class Main{
 
 ### 注意事项
 
-<img src="C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220412134400547.png" alt="image-20220412134400547" style="zoom:67%;" />
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202303042213670.png)
 
 ```java
 import java.util.*;
@@ -576,8 +587,8 @@ public class Main{
         while (sc.hasNext()){
             String[] s = sc.nextLine().split(" ");
             Long sum = 0L;
-            for (int i = 0;i < s.length;i++){
-                sum += Long.parseLong(s[i]);
+            for (String str : s){
+                sum += Long.parseLong(str);
             }
             System.out.println(sum);
         }
